@@ -23,7 +23,13 @@ class Tournamet extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
+
+    public static $tableStyle = 'tight';
+
+    public static $clickAction = 'edit';
+
+    public static $perPageOptions = [1];
 
     /**
      * The columns that should be searched.
@@ -32,6 +38,7 @@ class Tournamet extends Resource
      */
     public static $search = [
         'id',
+        'name',
     ];
 
     /**
@@ -42,10 +49,10 @@ class Tournamet extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            Text::make('name')->required(),
-            Date::make('start_date')->required(),
-            Date::make('end_date')->required(),
-            Boolean::make('Active status', 'is_active'),
+            Text::make('name')->sortable()->required(),
+            Date::make('start_date')->sortable()->required(),
+            Date::make('end_date')->sortable()->required(),
+            Boolean::make('Active status', 'is_active')->sortable(),
             BelongsTo::make('Admin', 'admin', User::class),
 
         ];

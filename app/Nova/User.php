@@ -26,6 +26,12 @@ class User extends Resource
      */
     public static $title = 'name';
 
+    public static $tableStyle = 'tight';
+
+    public static $clickAction = 'edit';
+
+    public static $perPageOptions = [1];
+
     /**
      * The columns that should be searched.
      *

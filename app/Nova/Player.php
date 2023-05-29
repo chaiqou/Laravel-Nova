@@ -21,7 +21,13 @@ class Player extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
+
+    public static $tableStyle = 'tight';
+
+    public static $clickAction = 'edit';
+
+    public static $perPageOptions = [1];
 
     /**
      * The columns that should be searched.
@@ -30,6 +36,7 @@ class Player extends Resource
      */
     public static $search = [
         'id',
+        'name',
     ];
 
     /**
