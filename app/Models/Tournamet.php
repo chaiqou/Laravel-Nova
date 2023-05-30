@@ -17,8 +17,8 @@ class Tournamet extends Model
         'end_date' => 'datetime',
     ];
 
-    public function admin(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'admin_id');
+        return $this->belongsTo(User::class);
     }
 }

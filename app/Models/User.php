@@ -44,7 +44,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function tournaments(): HasMany
+    public function tournamets(): HasMany
     {
         return $this->hasMany(Tournamet::class);
     }

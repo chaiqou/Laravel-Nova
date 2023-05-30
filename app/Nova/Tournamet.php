@@ -53,7 +53,7 @@ class Tournamet extends Resource
             Date::make('start_date')->sortable()->required(),
             Date::make('end_date')->sortable()->required(),
             Boolean::make('Active status', 'is_active')->sortable(),
-            BelongsTo::make('Admin', 'admin', User::class),
+            BelongsTo::make('User', 'user', User::class),
 
         ];
     }
