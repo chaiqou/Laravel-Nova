@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -55,7 +54,7 @@ class Player extends Resource
 
             Text::make('email')->rules('email'),
             Number::make('phone_number')->rules('integer', 'min_digits:3'),
-            Number::make('thropy_count')->rules('integer', 'min:1' , 'max:30')
+            Number::make('thropy_count')->rules('integer', 'min:1', 'max:30'),
         ];
     }
 

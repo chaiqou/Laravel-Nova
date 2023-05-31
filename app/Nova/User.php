@@ -113,4 +113,9 @@ class User extends Resource
     {
         return [];
     }
+
+    public static function authorizable()
+    {
+        return true;
+    }
 }
