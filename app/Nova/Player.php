@@ -48,10 +48,14 @@ class Player extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            Text::make('name')->required(),
-            Text::make('email')->required(),
-            Number::make('phone_number')->required(),
-            Number::make('thropy_count')->required(),
+            Text::make('name')
+                ->rules('required', 'min:3', 'max:10')
+                ->updateRules('unique:players,name,{{resourceId}}')
+                ->creationRules('unique:players,name,{{resourceId}}'),
+
+            Text::make('email')->rules('email'),
+            Number::make('phone_number')->rules('integer', 'min_digits:3'),
+            Number::make('thropy_count')->rules('integer', 'min:1' , 'max:30')
         ];
     }
 
